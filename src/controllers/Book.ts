@@ -101,5 +101,59 @@ const deleteBook = async (req: Request<{ bookId: string }>, res: Response, next:
     }
 };
 
+// Función para anadir un tag a un libro
+const addTag = async (req: Request<{ bookId: string }>, res: Response, next: NextFunction) => {
+    const bookId = req.params.bookId;
+    const { tag } = req.body;
+
+    try {
+        const book = await BookService.addTag(bookId, tag);
+
+        if (book) {
+            res.status(200).json({ book });
+        } else {
+            res.status(404).json({ message: 'not found' });
+        }
+    } catch (error) {
+        next(error);
+    }
+};
+
+// Función para reemplazar la lista entera de tags de un libro
+const replaceTags = async (req: Request<{ bookId: string }>, res: Response, next: NextFunction) => {
+    const bookId = req.params.bookId;
+    const { tags } = req.body;
+
+    try {
+        const book = await BookService.replaceTags(bookId, tags);
+
+        if (book) {
+            res.status(200).json({ book });
+        } else {
+            res.status(404).json({ message: 'not found' });
+        }
+    } catch (error) {
+        next(error);
+    }
+};
+
+// Función para quitar un tag de un libro
+const removeTag = async (req: Request<{ bookId: string; tag: string }>, res: Response, next: NextFunction) => {
+    const bookId = req.params.bookId;
+    const { tag } = req.params;
+
+    try {
+        const book = await BookService.removeTag(bookId, tag);
+
+        if (book) {
+            res.status(200).json({ book });
+        } else {
+            res.status(404).json({ message: 'not found' });
+        }
+    } catch (error) {
+        next(error);
+    }
+};
+
 // Exportamos todas las funciones para poder utilizarlas en las rutas
-export default { createBook, readBook, readAll, updateBook, deleteBook };
+export default { createBook, readBook, readAll, updateBook, deleteBook, addTag, replaceTags, removeTag };
