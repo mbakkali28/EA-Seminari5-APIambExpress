@@ -10,4 +10,4 @@ Exercici API REST
 - [EA-Exercise-RestAPI](https://github.com/rocmeseguer/EA-Exercise-RestAPI)
 
 ## Prompts IA
-- [LOG.MD](https://github.com/mbakkali28/EA-Seminari5-APIambExpresse/blob/main/LOG.md)
+- [LOG.MD](https://github.com/mbakkali28/EA-Seminari5-APIambExpress/blob/main/LOG.md)
