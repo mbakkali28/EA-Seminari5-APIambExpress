@@ -2,7 +2,7 @@
 
 Exercici API REST
 
-- [Video]()
+- [Video](https://drive.google.com/file/d/1lKBC7Ol7p9y-HrbVWggKjl7qxIraKE1R/view?usp=drive_link)
 
 ## Referències
 
